@@ -1,4 +1,4 @@
-async function fetchWeather() {  // Ensure function is async
+async function fetchWeather() {  
     try {
         const city = document.getElementById("cityInput").value;
         if (!city) {
