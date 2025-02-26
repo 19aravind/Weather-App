@@ -1,0 +1,64 @@
+body {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background-color: #e3f2fd; /* Light blue background */
+    margin: 0;
+    padding: 50px;
+}
+
+.container {
+    max-width: 400px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    margin: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #90caf9; /* Light blue border */
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #1e88e5; /* Darker blue */
+    box-shadow: 0 0 8px rgba(30, 136, 229, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #1e88e5; /* Blue */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #1565c0; /* Darker blue */
+    transform: scale(1.05);
+}
+
+#weatherInfo {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    padding: 15px;
+    background: #bbdefb; /* Soft blue background */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
