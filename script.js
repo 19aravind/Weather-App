@@ -16,16 +16,37 @@ async function fetchWeather() {
         }
 
         const data = await response.json();
+        const temperature = data.main.temp;
 
         document.getElementById("cityName").innerText = `${data.name}, ${data.sys.country}`;
-        document.getElementById("temperature").innerText = `🌡️ Temperature: ${data.main.temp}°C`;
+        document.getElementById("temperature").innerText = `🌡️ Temperature: ${temperature}°C`;
         document.getElementById("humidity").innerText = `💧 Humidity: ${data.main.humidity}%`;
         document.getElementById("weatherCondition").innerText = `🌤️ Condition: ${data.weather[0].description}`;
+
+        // Change background image based on temperature
+        changeBackground(temperature);
 
     } catch (error) {
         console.error("Error fetching weather:", error);
         document.getElementById("weatherInfo").innerHTML = "<p style='color: red;'>City not found or network issue. Try again.</p>";
     }
+}
+
+// Function to change background based on temperature
+function changeBackground(temp) {
+    let bgImage = "";
+
+    if (temp <= 0) {
+        bgImage = "url('snowimage.jpg')"; // Snowy background
+    } else if (temp > 0 && temp <= 15) {
+        bgImage = "url('cool.jpg')"; // Cool weather background
+    } else if (temp > 15 && temp <= 30) {
+        bgImage = "url('th(1).jpg')"; // Mild temperature background
+    } else {
+        bgImage = "url('hot image.jpg')"; // Hot temperature background
+    }
+
+    document.body.style.backgroundImage = bgImage;
 }
 
 // Attach event listener correctly
